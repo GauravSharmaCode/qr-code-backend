@@ -6,10 +6,23 @@ import cors from "cors"; // Import the cors middleware
 import 'dotenv/config';
 
 const app = express();
+const allowedOrigin = process.env.ALLOWED_ORIGIN;
 
 app.use(cors({
-  origin: 'https://qr-code-frontend-drab.vercel.app'
-})); // Enable CORS for all routes
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    // Check if the origin matches the allowed origin
+    if (origin === allowedOrigin) {
+      return callback(null, true);
+    }
+    
+    // If the origin is not allowed, return an error
+    return callback(new Error('Not allowed by CORS'));
+  }
+}));
+
 app.use(bodyParser.json());
 
 // Define the base URL and port
