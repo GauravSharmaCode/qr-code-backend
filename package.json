@@ -7,6 +7,7 @@
     "express": "^4.19.2",
     "fs": "^0.0.1-security",
     "inquirer": "^9.2.20",
+    "nvm": "^0.0.4",
     "qr-image": "^3.2.0"
   },
   "name": "2.4-qr-code-project",
@@ -14,7 +15,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
