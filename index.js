@@ -7,7 +7,9 @@ import 'dotenv/config';
 
 const app = express();
 
-app.use(cors()); // Enable CORS for all routes
+app.use(cors({
+  origin: 'https://qr-code-frontend-drab.vercel.app'
+})); // Enable CORS for all routes
 app.use(bodyParser.json());
 
 // Define the base URL and port
