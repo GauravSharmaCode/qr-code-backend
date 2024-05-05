@@ -15,10 +15,9 @@
     "type": "module",
     "main": "index.js",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node server.js",
-      "build": "node build"
-    },
+        "build": "npm install",
+        "start": "npm start"
+      },
     "author": "",
     "license": "ISC",
     "keywords": [],
